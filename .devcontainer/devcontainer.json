@@ -3,6 +3,14 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true,
+      "dockerDashComposeVersion": "v2"
+    }
+  },
   "forwardPorts": [3000, 5432, 6379, 8123, 9000],
-  "postCreateCommand": "cp .env.dev.example .env && pnpm i"
+  "postCreateCommand": "cp .env.dev.example .env && pnpm i",
+  "remoteUser": "node"
 }
